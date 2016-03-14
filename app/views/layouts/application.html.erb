@@ -11,6 +11,18 @@
 </head>
 <!-- END:head -->
 <body class="<%= controller.controller_name %>">
+  <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",   '#' %></li>
+        <li><%= link_to "Help",   '#' %></li>
+        <li><%= link_to "Log in", '#' %></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden=true></span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 <!-- START_HIGHLIGHT -->
   <div id="banner">
     <%= image_tag("logo.png") %>
