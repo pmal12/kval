@@ -1,10 +1,9 @@
-.carts {
-  .item_price, .total_line {
-    text-align: right;
-  }
+.cart-button{
+	float:left;
+	margin-left:1em;
+}
 
-  .total_line .total_cell {
-    font-weight: bold;
-    border-top: 1px solid #595;
-  }
+#total{
+	background-color:#FFCC33;
+	font-weight:bold;
 }

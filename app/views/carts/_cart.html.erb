@@ -3,9 +3,9 @@
   	<%= render(cart.line_items) %>
 
 
-    <li class="list-group-item">Total: <%= number_to_currency(cart.total_price) %></li>
+    <li class="list-group-item" id="total">Total: <%= number_to_currency(cart.total_price) %></li>
 
 </ul>
-<%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%>
-<%= button_to 'Empty cart', cart, method: :delete,
-    data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
+<div class="cart-button"><%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%></div>
+<div class="cart-button"><%= button_to 'Empty cart', cart, method: :delete,
+    data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %><div>
