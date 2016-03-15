@@ -21,13 +21,15 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart" aria-hidden=true></span><span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li>
+              <div id="cart"> 
+               <% if @cart %> 
+                 <!--<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>-->
+                  <%= render @cart %>
+                <% end %>
+              <% end %>
+            </div>
+            </li>
           </ul>
         </li>
       </ul>
@@ -41,13 +43,6 @@
   </div>
   <div id="columns">
     <div id="side">
-      <div id="cart"> 
-         <% if @cart %> 
-          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-            <%= render @cart %>
-          <% end %>
-        <% end %>
-      </div>
       <% if session[:user_id] == nil %>
       <ul>
         <li><%= link_to 'Home', store_path %></li>
