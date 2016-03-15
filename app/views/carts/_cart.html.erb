@@ -1,12 +1,11 @@
-<h2>Your Cart</h2>
 <ul class="list-group">
 
   	<%= render(cart.line_items) %>
 
 
-    <li class="list-group-item"><%= number_to_currency(cart.total_price) %></li>
+    <li class="list-group-item">Total: <%= number_to_currency(cart.total_price) %></li>
 
 </ul>
-<%= button_to 'Check out', new_order_path, method: :get %>
+<%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%>
 <%= button_to 'Empty cart', cart, method: :delete,
-    data: { confirm: 'Are you sure?' } %>
+    data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
