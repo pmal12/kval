@@ -1,15 +1,12 @@
 <h2>Your Cart</h2>
-<table>
-<!-- START_HIGHLIGHT -->
-  <%= render(cart.line_items) %>
-<!-- END_HIGHLIGHT -->
+<ul class="list-group">
 
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-  </tr>
+  	<%= render(cart.line_items) %>
 
-</table>
+
+    <li class="list-group-item"><%= number_to_currency(cart.total_price) %></li>
+
+</ul>
 <%= button_to 'Check out', new_order_path, method: :get %>
 <%= button_to 'Empty cart', cart, method: :delete,
     data: { confirm: 'Are you sure?' } %>
