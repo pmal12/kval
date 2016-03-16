@@ -9,7 +9,7 @@
 	  <%= number_to_currency(line_item.total_price) %>
 	  <span class="badge"><%= line_item.quantity %></span>
 	  <span class="item-right">
-	    <button class="btn btn-xs btn-danger">x</button>
+	    <%= button_to 'x', line_item, method: :delete, class: "btn btn-xs btn-danger" %>
 	  </span>
   </li>
 
