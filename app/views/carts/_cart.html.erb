@@ -3,7 +3,7 @@
   	<%= render(cart.line_items) %>
 
 
-    <li class="list-group-item" id="total">Total: <%= number_to_currency(cart.total_price) %></li>
+    <li class="list-group-item" id="total"><p>Total: <%= number_to_currency(cart.total_price) %></p></li>
 
 </ul>
 <div class="cart-button"><%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%></div>
