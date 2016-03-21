@@ -4,6 +4,8 @@
 <tr>
 <% end %>
 
+<% if @line_item %>
+
   <li class="list-group-item">
 	  <%= line_item.product.title %>
 	  <%= number_to_currency(line_item.total_price) %>
@@ -12,6 +14,8 @@
 	    <%= button_to "x", line_item, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
 	  </span>
   </li>
+
+<% end %>
 
 <!--<%= sprintf("%2d x %s",
             line_item.quantity,

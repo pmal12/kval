@@ -7,5 +7,5 @@
 
 </ul>
 <div class="cart-button"><%= button_to 'Check out', new_order_path, method: :get, class: "btn btn-xs btn-success"%></div>
-<div class="cart-button"><%= button_to 'Empty cart', cart, method: :delete,
+<div class="cart-button"><%= button_to 'Empty cart', cart, method: :delete, remote: true,
     data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %><div>
