@@ -1,21 +1,13 @@
-<% if line_item == @current_item %>
-<tr id="current_item">
-<% else %>
-<tr>
-<% end %>
-
-<% if @line_item %>
 
   <li class="list-group-item">
 	  <%= line_item.product.title %>
 	  <%= number_to_currency(line_item.total_price) %>
-	  <span class="badge"><%= line_item.quantity %></span>
+	  <span class="badge" id="line_item_badge"><%= line_item.quantity %></span>
 	  <span class="item-right">
 	    <%= button_to "x", line_item, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
 	  </span>
   </li>
 
-<% end %>
 
 <!--<%= sprintf("%2d x %s",
             line_item.quantity,
