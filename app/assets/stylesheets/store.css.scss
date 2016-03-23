@@ -3,16 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* START_HIGHLIGHT */
-.carts, #side #cart {
-/* END_HIGHLIGHT */
-  .item_price, .total_line {
-    text-align: right;
-  }
-  .total_line .total_cell {
-    font-weight: bold;
-    border-top: 1px solid #595;
-  }
-}
+@import "carousel";
 
 .store {
   h1 {
@@ -20,14 +11,12 @@
     padding-bottom: 0.5em;
     font:  150% sans-serif;
     color: #226;
-    border-bottom: 3px dotted #77d;
   }
 
   /* An entry in the store catalog */
   .entry {
     overflow: auto;
     margin-top: 1em;
-    border-bottom: 1px dotted #77d;
     min-height: 100px;
 
     img {
@@ -52,7 +41,7 @@
       margin-bottom: 0.8em;
 
       form,div {
-        display: inline;
+         display: inline;
       } 
     }
 
@@ -61,6 +50,7 @@
       font-weight: bold;
       margin-right: 3em;
     }
+
   }
 }
 /* END_HIGHLIGHT */
