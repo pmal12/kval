@@ -1,24 +1,38 @@
+<div class="container">
+<% if @order.errors.any? %>
 <p id="notice"><%= notice %></p>
-
-<p>
+<% end %>
+<div class="row" id="show-row">
+	<div class="col-md-offset-3 col-md-6">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Order with id:<%= @order.id %></strong></div>
+<ul class="list-group">
+<li class="list-group-item"
   <strong>Name:</strong>
   <%= @order.name %>
-</p>
+</li>
 
-<p>
+<li class="list-group-item">
   <strong>Address:</strong>
   <%= @order.address %>
-</p>
+</li>
 
-<p>
+<li class="list-group-item">
   <strong>Email:</strong>
   <%= @order.email %>
-</p>
+</li>
 
-<p>
+<li class="list-group-item">
   <strong>Pay type:</strong>
   <%= @order.pay_type %>
-</p>
+</li>
+</ul>
+</div>
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+</div>
+</div>
+</div>

@@ -1,6 +1,7 @@
-.row{
-  margin-top: 5em;
-}
+body {
+    padding-top: 100px;
+  }
+
 .badge{
   background-color:grey;
 }
@@ -25,42 +26,43 @@ ul .dropdown-menu{
 
 
   #main {
-    padding: 1em;
     background: white;
+
   }
 
 
 //#START:form
-.depot_form {
-  fieldset {
-    background: #efe;
-    legend {
-      color: #dfd;
-      background: #141;
-      font-family: sans-serif;
-      padding: 0.2em 1em;
-    }
-  }
-  form {
-    label {
-      width: 5em;
-      float: left;
-      text-align: right;
-      padding-top: 0.2em;
-      margin-right: 0.1em;
-      display: block;
-    }
+// .depot_form {
+//   fieldset {
+//     background: lightblue;
+//     margin-top: 51px;
+//     legend {
+//       color: #dfd;
+//       background: grey;
+//       font-family: sans-serif;
+//       padding: 0.2em 1em;
+//     }
+//   }
+//   form {
+//     label {
+//       width: 5em;
+//       float: left;
+//       text-align: right;
+//       padding-top: 0.2em;
+//       margin-right: 0.1em;
+//       display: block;
+//     }
 
-    select, textarea, input {
-      margin-left: 0.5em;
-    }
+//     select, textarea, input {
+//       margin-left: 1em;
+//     }
 
-    .submit {
-      margin-left: 4em;
-    }
-    br {
-      display: none
-    }
-  }
-}
+//     .submit {
+//       margin-left: 4em;
+//     }
+//     br {
+//       display: none
+//     }
+//   }
+// }
 //#END:form
