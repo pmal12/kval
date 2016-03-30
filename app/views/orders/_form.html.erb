@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <fieldset class="form-group">
+<fieldset class="form-group">
   <div class="input-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, size: 40, class: "form-control" %>
@@ -28,7 +28,7 @@
     <%= f.text_field :email, size: 40, class: "form-control" %>
   </div>
 </fieldset>
-  <fieldset class="form-group">
+<fieldset class="form-group">
   <div class="input-group">
     <%= f.label :pay_type %><br>
     <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method' %>
