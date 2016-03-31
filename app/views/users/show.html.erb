@@ -1,9 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+<% if @user.errors.any? %>
 <p id="notice"><%= notice %></p>
-
-<p>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>User:</strong></div>
+<ul class="list-group">
+<li class="list-group-item"
   <strong>Name:</strong>
   <%= @user.name %>
-</p>
+</li>
+</ul>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
+</div>
+</div>

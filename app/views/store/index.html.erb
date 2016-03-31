@@ -1,8 +1,9 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<%= render "carousel" %>
 <div class="container">
+<%= render "carousel" %>
+
 	<h1> Catalog  </h1>
 	<div class="row">
 		<% cache ['store', Product.latest] do %> 

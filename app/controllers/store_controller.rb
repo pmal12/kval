@@ -25,6 +25,7 @@ class StoreController < ApplicationController
   def index
     @products = Product.order(:title)
     @cart = current_cart
+    @advertisements = Advertisement.order(:title)
   end
 end
 
