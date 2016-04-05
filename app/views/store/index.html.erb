@@ -3,8 +3,11 @@
 <% end %>
 <div class="container" id="store-container">
 <%= render "carousel" %>
-
 	<h1> Catalog  </h1>
+	<%= form_tag(store_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+        <%= submit_tag "Search" %>
+    <% end %>
 	<ul class="flex-container">
 		<% cache ['store', Product.latest] do %> 
 		  <% @products.each_with_index do |product, index| %>

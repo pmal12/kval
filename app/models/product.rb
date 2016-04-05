@@ -19,6 +19,12 @@ class Product < ActiveRecord::Base
   }
   validates :title, length: {minimum: 10}
 
+
+
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%") 
+  end
+
   private
 
     # ensure that there are no line items referencing this product
