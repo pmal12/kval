@@ -4,53 +4,33 @@
 
 /* START_HIGHLIGHT */
 @import "carousel";
-
 .store {
-  h1 {
-    margin: 0;
-    padding-bottom: 0.5em;
-    font:  150% sans-serif;
-    color: #226;
+  .flex-container{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
 
-  /* An entry in the store catalog */
-  .entry {
-    overflow: auto;
-    margin-top: 1em;
-    min-height: 100px;
+  .flex-item{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    text-align: center;
 
-    img {
-      width: 80px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      position: absolute;
+    img{
+      width: 220px;
+      height: 150px;
     }
-
-    h3 {
-      font-size: 120%;
-      font-family: sans-serif;
-      margin-left: 100px;
-      margin-top: 0;
-      margin-bottom: 2px;
-      color: #227;
-    }
-
-    p, div.price_line {
-      margin-left: 100px;
-      margin-top: 0.5em; 
-      margin-bottom: 0.8em;
-
-      form,div {
-         display: inline;
-      } 
-    }
-
-    .price {
-      color: #44a;
-      font-weight: bold;
-      margin-right: 3em;
-    }
-
+   
   }
+
+ 
 }
 /* END_HIGHLIGHT */
