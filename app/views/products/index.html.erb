@@ -11,6 +11,7 @@
       <div class="table-responsive">
 
       <table class="table table-hover table-condensed">
+      <% if @products.present? %>
       <% @products.each do |product| %>
         <tr>
           <td class="list-image">
@@ -30,6 +31,12 @@
             <td><%= link_to 'Destroy', product, method: :delete,
                         data: { confirm: 'Are you sure?' } %></td>
         </tr>
+      
+      <% end %>
+      <% else %>
+      <tr>
+        <td><h3>There are no products containing: <%= params[:search] %></h3></td>
+      </tr>
       <% end %>
       </table>
       </div>
