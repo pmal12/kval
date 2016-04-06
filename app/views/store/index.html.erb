@@ -1,22 +1,23 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
 <div class="container" id="store-container">
-<%= render "carousel" %>
-<h1>Catalog</h1>
-	<div class="row" id="search-row">
-		<div class="col-md-offset-9 col-md-3">
-			<div id="search-form">
-				<%= form_tag(store_path, :method => "get", id: "search-form") do %>
-		        <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-		        <%= submit_tag "Search" %>
-		    <% end %>
+	<% if flash_messages %>
+	<div id="flash-messages"><%= flash_messages %></div>
+	<% end %>
+	<%= render "navbar_store" %>
+	<%= render "carousel" %>
+	<h1>Catalog</h1>
+		<div class="row" id="search-row">
+			<div class="col-md-offset-9 col-xs-offset-2 col-md-3 col-xs-8">
+				<div id="search-form">
+					<%= form_tag(store_path, :method => "get", id: "search-form", class: "form-inline") do %>
+			        <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control" %>
+			        <%= submit_tag "Search", class: "btn btn-sm btn-primary" %>
+			    <% end %>
+				</div>
 			</div>
 		</div>
-	</div>
-	<% if @products.present? %>
-	<div id="catalog-products"><%= render 'store/flex_container' %></div>
-	<% else %>
-	<h3>There are no products containing: <%= params[:search] %></h3>
-	<% end %>
+		<% if @products.present? %>
+		<div id="catalog-products"><%= render 'store/flex_container' %></div>
+		<% else %>
+		<h3>There are no products containing: <%= params[:search] %></h3>
+		<% end %>
 </div>
