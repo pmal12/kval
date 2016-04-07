@@ -8,8 +8,8 @@
 		</p>
 
 		<p>
-		  <strong>Image url:</strong>
-		  <%= @advertisement.image_url %>
+		  <strong>Image:</strong>
+		  <%= image_tag @advertisement.image.url %>
 		</p>
 
 		<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |

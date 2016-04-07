@@ -69,6 +69,6 @@ class AdvertisementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertisement_params
-      params.require(:advertisement).permit(:title, :image_url)
+      params.require(:advertisement).permit(:title, :image)
     end
 end

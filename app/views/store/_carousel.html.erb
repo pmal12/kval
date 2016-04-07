@@ -10,11 +10,11 @@
       <div class="carousel-inner" role="listbox">
         
         <div class="item active">
-          <%= image_tag("large.jpg") %>
+          <%= image_tag @advertisements.image.url %>
         </div>
           <% @advertisements.each do |ad| %>
           <div class="item">
-          <%= image_tag(ad.image_url) %>
+          <%= image_tag(ad.image.url) %>
           </div>  
           <% end %>
         

@@ -17,13 +17,8 @@
 </li>
 
 <li class="list-group-item">
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</li>
-
-<li class="list-group-item">
   <strong>Image:</strong>
-  <%= image_tag(@product.image_url, class: 'img-rounded') %>
+  <%= image_tag @product.image.url, class: 'img-rounded' %>
 </li>
 
 <li class="list-group-item">

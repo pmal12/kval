@@ -15,7 +15,7 @@
       <% @products.each do |product| %>
         <tr>
           <td class="list-image">
-            <%= image_tag(product.image_url, class: 'img-rounded') %>
+            <%= image_tag product.image.url, class: 'img-rounded' %>
           </td>
 
           <td class="list_description">
