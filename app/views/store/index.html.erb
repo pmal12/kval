@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<% if @products.present? %>
-		<div id="catalog-products"><%= render 'store/flex_container' %></div>
+		<%= render 'store/flex_container' %>
 		<% else %>
 		<h3>There are no products containing: <%= params[:search] %></h3>
 		<% end %>
