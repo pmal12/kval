@@ -8,10 +8,6 @@
           <div class="item <% if index == 0 %>active<% end %>">
           <%= image_tag ad.image.url %>
           </div>
-          <% content_tag(:ol, class: "carousel-indicators") do %>
-            <% @advertisements.each do |item| %>
-              <%= content_tag(:li, 'data-target' => "#myCarousel" 'data-slide-to' => "<% index.to_i %>" %>
-            <% end %>
        <% end %>
         
       </div>
