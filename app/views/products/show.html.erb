@@ -18,7 +18,12 @@
 
 <li class="list-group-item">
   <strong>Image:</strong>
-  <%= image_tag @product.image.url, class: 'img-rounded' %>
+  <div class="prod-image"><%= image_tag @product.image.url, class: 'img-rounded' %></div>
+</li>
+
+<li class="list-group-item">
+  <strong>Category:</strong>
+  <%= @product.category.name %>
 </li>
 
 <li class="list-group-item">

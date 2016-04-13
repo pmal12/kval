@@ -23,10 +23,11 @@ class StoreController < ApplicationController
   include CurrentCart
   before_action :set_cart
   def index
+    
+    @categories = Category.order(:name)
     @products = Product.order(:title)
     @cart = current_cart
     @advertisements = Advertisement.order(:title)
-    @products = Product.all
     if params[:search]
       @products = Product.search(params[:search]).order("created_at DESC")
     else

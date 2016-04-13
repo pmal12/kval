@@ -1,6 +1,6 @@
-	<ul class="flex-container">
+	
 		<% cache ['store', Product.latest] do %> 
-		  <% @products.each_with_index do |product, index| %>
+		  <% @products.each do |product| %>
 			  <% cache ['flex-item', product] do %>
 				
 				  <li class="flex-item">
@@ -19,4 +19,3 @@
 			  
 		  <% end %>
 		<% end %>
-	</ul>

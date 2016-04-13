@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if flash_messages %>
+  <div id="flash-messages"><%= flash_messages %></div>
+<% end %>
 
 <h1>Listing Categories</h1>
 

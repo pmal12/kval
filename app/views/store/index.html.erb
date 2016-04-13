@@ -15,9 +15,29 @@
 				</div>
 			</div>
 		</div>
-		<% if @products.present? %>
-		<%= render 'store/flex_container' %>
+
+
+
+
+		
+		
+		<% if @products.present? and params[:search].present? %>
+		<ul class="flex-container">
+
+		<%= render 'store/search_results' %>
+		</ul>
 		<% else %>
-		<h3>There are no products containing: <%= params[:search] %></h3>
+			<% @categories.each do |category| %>
+			<h2><%= category.name %></h2>
+				
+			<ul class="flex-container">
+				<%= render category.products %>
+			</ul>
+				
+			<% end %>
+
+	
 		<% end %>
+		
+			
 </div>
