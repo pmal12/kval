@@ -48,3 +48,5 @@ end
 
 # gem 'debugger', group: [:development, :test]
 gem "paperclip", "~> 5.0.0.beta1"
+
+gem "byebug"

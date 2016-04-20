@@ -1,5 +1,9 @@
 Depot::Application.routes.draw do
   resources :categories
+  get 'display_cat_prod' => "store#display_cat_prod", as: 'display_cat_prod'
+    
+  get 'category/:category_id' => "store#show", as: 'store_category'
+
   resources :advertisements
 
   get 'admin' => 'admin#index'

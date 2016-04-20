@@ -4,7 +4,7 @@
 
 /* START_HIGHLIGHT */
 @import "carousel";
-.store {
+
   .flex-container{
     padding: 0;
     list-style: none;
@@ -14,7 +14,7 @@
   }
 
   .flex-item{
-    color: white;
+    color: black;
     padding-top: 2%;
     padding-bottom: 2%;
     margin-bottom: 2%;
@@ -29,7 +29,9 @@
       width: 220px;
       height: 150px;
     }
-   
+   .price{
+    padding-bottom:10px;
+   }
   }
 
   #search-row{
@@ -39,10 +41,9 @@
   h3{
     
     font-weight: bold;
-    text-align: center;
+    
     padding-top: 50px;
-    padding-bottom: 50px;
+    
   }
 
-}
 
