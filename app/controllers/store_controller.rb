@@ -22,7 +22,7 @@ class StoreController < ApplicationController
   skip_before_action :authorize
   include CurrentCart
   before_action :set_cart
-  before_action :set_prod, only: [:index, :show_prod]
+  before_action :set_prod, only: :index
 
 
   # GET /
@@ -43,7 +43,7 @@ class StoreController < ApplicationController
 
   # GET /product/:id
   def show_prod
-    @product = Product.find_by(params[:product_id])
+    @product = Product.find_by_id(params[:product_id])
 
   end
 
