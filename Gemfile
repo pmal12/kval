@@ -50,3 +50,7 @@ end
 gem "paperclip"
 
 gem "byebug"
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.4'
+end
