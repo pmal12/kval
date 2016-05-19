@@ -1,9 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div id="flash-messages"><%= flash_messages %></div>
+			<div class="panel panel-default">
+			  <div class="panel-heading"><strong>User:</strong></div>
+			<ul class="list-group">
+			<li class="list-group-item"
+			  <strong>Name:</strong>
+			  <%= @user.name %>
+			</li>
+			</ul>
+			</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+			<%= link_to 'Edit', edit_user_path(@user) %> |
+			<%= link_to 'Back', users_path %>
+			</div>
+	</div>
+</div>

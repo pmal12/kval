@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy, :who_bought]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :search]
 
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at DESC")
+    else
+      @products = Product.all.order('created_at DESC')
+    end
   end
 
   # GET /products/1
@@ -16,17 +21,19 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @categories = Category.order(:name)
   end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.order(:name)
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -71,7 +78,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image, :price, :category_id)
     end
     def who_bought
       @product = Product.find(params[:id])

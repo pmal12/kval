@@ -1,0 +1,9 @@
+<h3>Dear <%= @order.name %></h3>
+<p>Thanks for your order</p>
+<p>You ordered:</p>
+<% @order.line_items.each do |item| %>
+<ul>
+	<li><%= item.quantity %> <%= item.product.title %></li>
+</ul>
+<% end %>
+

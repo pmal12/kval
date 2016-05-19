@@ -3,64 +3,54 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* START_HIGHLIGHT */
-.carts, #side #cart {
-/* END_HIGHLIGHT */
-  .item_price, .total_line {
-    text-align: right;
+@import "carousel";
+
+  .flex-container{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
-  .total_line .total_cell {
+
+  .flex-item{
+    color: black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    text-align: center;
+
+    img{
+      width: 220px;
+      height: 150px;
+    }
+   .price{
+    padding-bottom:10px;
+   }
+  }
+
+  #search-row{
+    margin-top: 0;
+  }
+
+  h3{
+    
     font-weight: bold;
-    border-top: 1px solid #595;
+    
+    padding-top: 50px;
+    
   }
-}
-
-.store {
-  h1 {
-    margin: 0;
-    padding-bottom: 0.5em;
-    font:  150% sans-serif;
-    color: #226;
-    border-bottom: 3px dotted #77d;
+  p{
+    word-break: normal;
+  }
+  #add_button{
+    float: right;
   }
 
-  /* An entry in the store catalog */
-  .entry {
-    overflow: auto;
-    margin-top: 1em;
-    border-bottom: 1px dotted #77d;
-    min-height: 100px;
 
-    img {
-      width: 80px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      position: absolute;
-    }
-
-    h3 {
-      font-size: 120%;
-      font-family: sans-serif;
-      margin-left: 100px;
-      margin-top: 0;
-      margin-bottom: 2px;
-      color: #227;
-    }
-
-    p, div.price_line {
-      margin-left: 100px;
-      margin-top: 0.5em; 
-      margin-bottom: 0.8em;
-
-      form,div {
-        display: inline;
-      } 
-    }
-
-    .price {
-      color: #44a;
-      font-weight: bold;
-      margin-right: 3em;
-    }
-  }
-}
-/* END_HIGHLIGHT */
+  

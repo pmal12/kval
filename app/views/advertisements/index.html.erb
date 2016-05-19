@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h2>Listing advertisements</h2></div>
+      <div class="table-responsive">
+
+      <table class="table table-bordered table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Image</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @advertisements.each do |advertisement| %>
+            <tr>
+              <td><%= advertisement.title %></td>
+              <td class="ad-image"><%= image_tag advertisement.image.url(:thumb), class: "img-rounded" %></td>
+              <td><%= link_to 'Show', advertisement %></td>
+              <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
+              <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+      </div>
+    
+    
+      <%= link_to 'New Advertisement', new_advertisement_path, class: "btn btn-default" %>
+  
+</div>

@@ -1,24 +1,41 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="container">
+<div id="flash-messages"><%= flash_messages %></div>
+<div class="row" id="show-row">
+	<div class="col-md-6">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><strong>Product with id:<%= @product.id %></strong></div>
+<ul class="list-group">
+<li class="list-group-item">
   <strong>Title:</strong>
   <%= @product.title %>
-</p>
+</li>
 
-<p>
+<li class="list-group-item">
   <strong>Description:</strong>
   <%= @product.description %>
-</p>
+</li>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+<li class="list-group-item">
+  <strong>Image:</strong>
+  <div class="prod-image"><%= image_tag @product.image.url, class: 'img-rounded' %></div>
+</li>
 
-<p>
+<li class="list-group-item">
+  <strong>Category:</strong>
+  <%= @product.category.name %>
+</li>
+
+<li class="list-group-item">
   <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <%= number_to_currency(@product.price) %>
+</li>
+</ul>
+</div>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</div>
+</div>
+</div>

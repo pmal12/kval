@@ -22,9 +22,33 @@ class StoreController < ApplicationController
   skip_before_action :authorize
   include CurrentCart
   before_action :set_cart
-  def index
-    @products = Product.order(:title)
-    @cart = current_cart
-  end
-end
+  before_action :set_prod, only: :index
 
+
+  # GET /
+  def index
+    @cart = current_cart
+    if params[:search]
+      @products = @products.search(params[:search]).order("created_at DESC")
+    else
+      @products = @products.order('created_at DESC')
+    end
+  end
+
+  # GET /category/:id
+  def show
+    @category = Category.find_by_id(params[:category_id])
+    @products = @category.products
+  end
+
+  # GET /product/:id
+  def show_prod
+    @product = Product.find_by_id(params[:product_id])
+
+  end
+
+  def set_prod
+    @products = Product.order(:title)
+  end
+
+end

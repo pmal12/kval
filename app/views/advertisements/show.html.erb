@@ -1,0 +1,27 @@
+<div id="flash-messages"><%= flash_messages %></div>
+<div class="container">
+	<div class="row" id="show-row">
+    	<div class="col-md-6">
+        <div class="panel panel-default">
+         <div class="panel-heading"><strong>Advertisement with id:<%= @advertisement.id %></strong></div>
+		
+        
+		<ul class="list-group">
+            <li class="list-group-item">
+			  <strong>Title:</strong>
+			  <%= @advertisement.title %>
+			</li>
+
+			<li class="list-group-item">
+			  <strong>Image:</strong>
+			  <%= image_tag @advertisement.image.url(:medium) %>
+			</li>
+		</ul>
+        
+		
+	</div>
+</div>
+</div>
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |
+<%= link_to 'Back', advertisements_path %>
+</div>

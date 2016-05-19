@@ -1,32 +1,48 @@
-<h1>Listing products</h1>
+<div class="container">
+  <div class="row">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Listing products</h2>
+        <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+        <%= submit_tag "Search" %>
+    <% end %>
+      </div>
+      <div class="table-responsive">
 
-<table>
-<% @products.each do |product| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <table class="table table-hover table-condensed">
+      <% if @products.present? %>
+      <% @products.each do |product| %>
+        <tr>
+          <td class="list-image">
+            <%= image_tag product.image.url, class: 'img-rounded' %>
+          </td>
 
-    <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
-    </td>
+          <td class="list_description">
+            <dl>
+              <dt><%= product.title %></dt>
+              <dd><%= truncate(strip_tags(product.description),
+                     length: 80) %></dd>
+            </dl>
+          </td>
+            <td><%= link_to 'Show', product %></td>
+            <td><%= link_to 'Edit', edit_product_path(product) %></td>
+            <td><%= link_to 'Destroy', product, method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      
+      <% end %>
+      <% else %>
+      <tr>
+        <td><h3>There are no products containing: <%= params[:search] %></h3></td>
+      </tr>
+      <% end %>
+      </table>
+      </div>
+      </div>
 
-    <td class="list_description">
-      <dl>
-        <dt><%= product.title %></dt>
-        <dd><%= truncate(strip_tags(product.description),
-               length: 80) %></dd>
-      </dl>
-    </td>
 
-    <td class="list_actions">
-      <%= link_to 'Show', product %><br/>
-      <%= link_to 'Edit', edit_product_path(product) %><br/>
-      <%= link_to 'Destroy', product, method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-    </td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New product', new_product_path %>
-
+    <%= link_to 'New product', new_product_path, class: "btn btn-default" %>
+        
+  </div>
+</div>

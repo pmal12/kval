@@ -1,24 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div id="flash-messages"><%= flash_messages %></div>
+    <div class="row" id="show-row">
+    	<div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Order with id:<%= @order.id %></strong></div>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Name:</strong>
+              <%= @order.name %>
+            </li>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
+            <li class="list-group-item">
+              <strong>Address:</strong>
+              <%= @order.address %>
+            </li>
 
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
+            <li class="list-group-item">
+              <strong>Email:</strong>
+              <%= @order.email %>
+            </li>
 
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
+            <li class="list-group-item">
+              <strong>Pay type:</strong>
+              <%= @order.pay_type %>
+            </li>
 
-<p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
-</p>
+            <li class="list-group-item">
+              <strong>Phone number:</strong>
+              <%= @order.phone_number %>
+            </li>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+            <li class="list-group-item">
+              <strong>Ordered items:</strong>
+              <% @order.line_items.each do |item| %>
+              <ul>
+                <li><%= item.quantity %> <%= item.product.title %></li>
+              </ul>
+              <% end %>
+            </li>
+
+            <li class="list-group-item">
+              <strong>Total:</strong>
+              <%= number_to_currency( @order.line_items.to_a.sum { |item| item.total_price} )%>
+            </li>
+          </ul>
+        </div>
+
+
+        <%= link_to 'Edit', edit_order_path(@order) %> |
+        <%= link_to 'Back', orders_path %>
+      </div>
+    </div>
+</div>

@@ -1,23 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-4">
 
-<div class="depot_form">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
-  <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
+      <div id="flash-messages"><%= flash_messages %></div>
+      <%= form_tag do %>
 
-      <div class="field">
-        <%= label_tag :name, 'Name:' %>
-        <%= text_field_tag :name, params[:name] %>
-      </div>
-      <div class="field">
-        <%= label_tag :password, 'Password:' %>
-        <%= password_field_tag :password, params[:password] %>
-      </div>
-      <div>
-        <%= submit_tag "Login" %>
-      </div>
-    </fieldset>
-  <% end %>
+          <h2>Please Log In</h2>
+
+          <div class="form-group">
+            <%= label_tag :name, 'Name:' %>
+            <%= text_field_tag :name, params[:name], class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :password, 'Password:' %>
+            <%= password_field_tag :password, params[:password], class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Login", class: "btn btn-primary" %>
+          </div>
+
+      <% end %>
+
+    </div>
+  </div>
 </div>
