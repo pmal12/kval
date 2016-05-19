@@ -36,8 +36,8 @@ Depot::Application.configure do
     port: 587,
     domain: "domain.of.sender.net",
     authentication: "plain",
-    user_name: ENV["GMAIL_USERNAME"], #need to put in real info instead
-    password: ENV["GMAIL_PASSWORD"],
+    user_name: "pmaleiko@gmail.com",
+    password: "petmal12",
     enable_starttls_auto: true 
   }
   config.action_mailer.default_url_options = { host: "localhost:3000" }

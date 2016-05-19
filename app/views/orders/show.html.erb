@@ -26,6 +26,11 @@
             </li>
 
             <li class="list-group-item">
+              <strong>Phone number:</strong>
+              <%= @order.phone_number %>
+            </li>
+
+            <li class="list-group-item">
               <strong>Ordered items:</strong>
               <% @order.line_items.each do |item| %>
               <ul>

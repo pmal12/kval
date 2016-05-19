@@ -3,5 +3,7 @@ class Advertisement < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :image, :title, presence: true
+  validates :title, uniqueness: true
+  
   
 end

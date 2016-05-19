@@ -1,20 +1,32 @@
-<% if flash_messages %>
-	<div id="flash-messages"><%= flash_messages %></div>
-<% end %>
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<div class="container">
+  <div id="flash-messages"><%= flash_messages %></div>
+    <div class="row" id="show-row">
+    	<div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Category with id:<%= @category.id %></strong></div>
+		<% if flash_messages %>
+			<div id="flash-messages"><%= flash_messages %></div>
+		<% end %>
+		<li class="list-group-item">
+		  <strong>Name:</strong>
+		  <%= @category.name %>
+		</li>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+		<li class="list-group-item">
+		  <strong>Description:</strong>
+		  <%= @category.description %>
+		</li>
 
-<p> Associated products </p>
-<% @category.products.each do |product| %>
-<%= link_to product.title, product %>
-<% end %>
+		<li class="list-group-item">
+			<strong>Associated products:<strong>
+			<% @category.products.each do |product| %>
+			<%= link_to product.title, product %>
+			<% end %>
+		</li>
+		</div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+		<%= link_to 'Edit', edit_category_path(@category) %> |
+		<%= link_to 'Back', categories_path %>
+      </div>
+    </div>
+</div>

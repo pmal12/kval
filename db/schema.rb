@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412104020) do
+ActiveRecord::Schema.define(version: 20160509094611) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -49,12 +49,13 @@ ActiveRecord::Schema.define(version: 20160412104020) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name",         limit: 255
     t.text     "address"
-    t.string   "email",      limit: 255
-    t.string   "pay_type",   limit: 255
+    t.string   "email",        limit: 255
+    t.string   "pay_type",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone_number"
   end
 
   create_table "products", force: :cascade do |t|
