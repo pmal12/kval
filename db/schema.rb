@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160509094611) do
 
   create_table "advertisements", force: :cascade do |t|
-    t.string   "title",              limit: 255
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -49,19 +49,19 @@ ActiveRecord::Schema.define(version: 20160509094611) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: :cascade do |t|
-    t.string   "name",         limit: 255
+    t.string   "name"
     t.text     "address"
-    t.string   "email",        limit: 255
-    t.string   "pay_type",     limit: 255
+    t.string   "email"
+    t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone_number"
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",              limit: 255
+    t.string   "title"
     t.text     "description"
-    t.decimal  "price",                          precision: 8, scale: 2
+    t.decimal  "price",              precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20160509094611) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "password_digest", limit: 255
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

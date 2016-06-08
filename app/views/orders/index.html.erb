@@ -11,7 +11,6 @@
             <th>Email</th>
             <th>Phone number</th>
             <th>Pay type</th>
-            <th>Total</th>
             <th></th>
             <th></th>
             <th></th>
@@ -26,7 +25,6 @@
               <td><%= order.email %></td>
               <td><%= order.phone_number %></td>
               <td><%= order.pay_type %></td>
-              <td><%= number_to_currency( order.line_items.to_a.sum.total_price ) %></td>
               <td><%= link_to 'Show', order %></td>
               <td><%= link_to 'Edit', edit_order_path(order) %></td>
               <td><%= link_to 'Destroy', order, method: :delete %></td>

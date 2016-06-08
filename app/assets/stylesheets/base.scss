@@ -12,6 +12,12 @@ body {
 #store-container{
   background: url(store.jpg) no-repeat center center fixed; 
     background-size: cover;
+    height: 100vh;
+}
+
+#store-container-main{
+  background: url(store.jpg) no-repeat center center fixed; 
+    background-size: cover;
 }
 
 .badge{
@@ -36,40 +42,18 @@ ul .dropdown-menu{
   font: bold smaller sans-serif;
 }
 
+.navbar-collapse, .navbar-brand{
+  font-weight: bold;
+}
 
+h1{
+  font-weight: bold;
+  font-family: Arial Black;
+  font-size: 50px;
+}
 
-//#START:form
-// .depot_form {
-//   fieldset {
-//     background: lightblue;
-//     margin-top: 51px;
-//     legend {
-//       color: #dfd;
-//       background: grey;
-//       font-family: sans-serif;
-//       padding: 0.2em 1em;
-//     }
-//   }
-//   form {
-//     label {
-//       width: 5em;
-//       float: left;
-//       text-align: right;
-//       padding-top: 0.2em;
-//       margin-right: 0.1em;
-//       display: block;
-//     }
-
-//     select, textarea, input {
-//       margin-left: 1em;
-//     }
-
-//     .submit {
-//       margin-left: 4em;
-//     }
-//     br {
-//       display: none
-//     }
-//   }
-// }
-//#END:form
+h2{
+  font-weight: bold;
+  font-family: Arial Black;
+  font-size: 40px;
+}

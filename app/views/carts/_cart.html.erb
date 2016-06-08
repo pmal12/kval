@@ -1,7 +1,9 @@
-<ul class="list-group">
-
+<ul id="cart-list" class="list-group">
+	<% if cart.line_items.empty? %>
+		<p id="cart-empty"><strong>Cart is empty<strong></p>
+		<% else %>
   	<%= render(cart.line_items) %>
-
+  	<% end %>
 
     <li class="list-group-item" id="total"><p>Total: <%= number_to_currency(cart.total_price) %></p></li>
 

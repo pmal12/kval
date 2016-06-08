@@ -51,4 +51,7 @@ class StoreController < ApplicationController
     @products = Product.order(:title)
   end
 
+  def about
+  end
+
 end

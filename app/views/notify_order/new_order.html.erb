@@ -1,0 +1,11 @@
+<h3>New order</h3>
+<p>Ordered items:</p>
+<% @order.line_items.each do |item| %>
+<ul>
+	<li><%= item.quantity %> <%= item.product.title %></li>
+</ul>
+<% end %>
+<p>Total: <%= number_to_currency( @order.line_items.to_a.sum { |item| item.total_price} )%></p>
+<p>Phone number: <%= @order.phone_number %></p>
+<p>Pay type: <%= @order.pay_type %></p>
+<p>Address: <%= @order.address %></p>

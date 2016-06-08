@@ -11,7 +11,7 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 
-  validates :title, :description, :image, presence: true
+  validates :title, :description, :image, :category_id, :price, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01}
   validates :title, uniqueness: true
 

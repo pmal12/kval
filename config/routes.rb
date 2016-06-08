@@ -6,6 +6,8 @@ Depot::Application.routes.draw do
 
   get 'product/:product_id' => "store#show_prod", as: 'product_show'
 
+   get 'store/about'
+
   resources :advertisements
 
   get 'admin' => 'admin#index'

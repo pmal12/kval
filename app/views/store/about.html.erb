@@ -1,0 +1,39 @@
+<div class="container" id="store-container-about">
+	<% if flash_messages %>
+	<div id="flash-messages"><%= flash_messages %></div>
+	<% end %>
+
+	<%= render "navbar_store" %>
+	<ul class="nav nav-pills">
+	<% @categories.each do |category| %>
+    <li role="presentation"><%= link_to category.name, store_category_path(category) %></li>
+     <% end %>
+	</ul>
+		<div class="row" id="search-row">
+			<div class="col-md-offset-8 col-xs-offset-2 col-md-4 col-xs-8">
+				<div id="search-form">
+					<%= form_tag(store_path, :method => "get", id: "search-form", class: "form-inline") do %>
+			        <%= text_field_tag :search, params[:search], placeholder: "Search Products", class: "form-control" %>
+			        <%= submit_tag "Search", class: "btn btn-sm btn-primary" %>
+			    <% end %>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				<h2>About</h2>
+				<br>
+				<p id="about"><strong>This web application is made in University of Latvia as a qualification project by a student Pēteris Maleiko. It's main purpose is to allow client order a meal easier and more comfortably.<strong></p>
+				<p id="about">The application contains functionality of viewing products, categories and ads. It is possible to view product by category just by clicking on a dropdown menu. Also each product ca be viewed individually as more information and larger picture is provided. The store also offers possibility of searching products by it's name, as it ca be done by using search input form, and clicking "Serach", if searched string has some common characters with system's product, it will be displayed.</p>
+				<p id="about">The products are being added to cart by clicking "Add to cart" button. Later the content in cart can be customized by deleting or adding more products. After completing cart comes next phase - the checkout as the order information has to be filled.</p>
+				<p id="about">If the order information is correct, the order will be created and confirmation email will be sent to you immediately with information about order. After receiving an order, you pay for it.</p>	
+				
+			<div>
+
+		</div>
+	
+			<div class="col-md-offset-1 col-md-10">
+			<div id="map"><%= image_tag"map.png", class: "img-responsive img-thumbnail" %></div>
+		</div>
+	
+</div>

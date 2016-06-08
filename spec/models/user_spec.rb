@@ -67,10 +67,19 @@ RSpec.describe User, :type => :model do
 			it "ensures that last admin remains" do
 				user = create(:user)
 				expect(User.count).to eq 1
-				user.destroy
-				expect{ user.destroy! }.to raise_error("Can't delete last user")
+				expect{ user.destroy! }.to raise_error(RuntimeError, "Can't delete last user")
 				expect(User.count).to eq 1
 			end
 		end
+		
+			it "user being deleted" do
+				user = create(:user)
+				user2 = create(:user, name:"janis", password:"janis", password_confirmation:"janis")
+				expect(User.count).to eq 2
+				user.destroy
+				expect{ user.destroy! }.not_to raise_error
+				expect(User.count).to eq 1
+			end
+		
 	end
 end
